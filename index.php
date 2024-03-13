@@ -10,46 +10,44 @@
 </head>
 <body>
 
-<h1>Recommended Book</h1>
+<h1>My favorites movies</h1>
 <?php
-$books = [
+$movies = [
     [
-        "name" => "First Book",
+        "name" => "First Movie",
         "author" => "Mohamed",
         "purchaseUrl" => "https://example.com",
         "releaseYear" => 2002
     ],
     [
-        "name" => "Second Book",
+        "name" => "Second Movie",
         "author" => "Ahmed",
         "purchaseUrl" => "https://example.com",
-        "releaseYear" => 2000
+        "releaseYear" => 1999
     ],
     [
-        "name" => "Third Book",
+        "name" => "Third Movie",
         "author" => "Ali",
         "purchaseUrl" => "https://example.com",
         "releaseYear" => 2004
     ]
 ];
 
-function filterByAuthor($books, $author)
+function filter($movies, $releaseYear)
 {
-    $filteredBooks = [];
-    foreach ($books as $book) {
-        if (strtolower($book['author']) === strtolower($author)) {
-            $filteredBooks[] = $book;
+    $filteredMovies = [];
+    foreach ($movies as $movie) {
+        if ($movie['releaseYear'] >= 2000) {
+            $filteredMovies[] = $movie;
         }
     }
-    return $filteredBooks;
+    return $filteredMovies;
 }
-
-
 
 ?>
 
-<?php foreach (filterByAuthor($books, 'Ahmed') as $book) : ?>
-    <li>  <?= $book["name"] . " - " . $book["releaseYear"]; ?> </li>
+<?php foreach (filter($movies, 2000) as $movie) : ?>
+    <li> <?= $movie['name'] ?>  </li>
 <?php endforeach; ?>
 
 </body>
