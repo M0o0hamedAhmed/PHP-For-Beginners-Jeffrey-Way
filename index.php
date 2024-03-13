@@ -33,20 +33,28 @@ $movies = [
     ]
 ];
 
-function filter($movies, $releaseYear)
+function filter($movies, $fn)
 {
     $filteredMovies = [];
     foreach ($movies as $movie) {
-        if ($movie['releaseYear'] >= 2000) {
+        if ($fn($movie)) {
             $filteredMovies[] = $movie;
         }
     }
     return $filteredMovies;
 }
 
+//$filteredMovies = filter($movies, function ($movie) {
+//    return $movie['releaseYear'] >= 2003;
+//});
+
+$filteredMovies = array_filter($movies, function ($movie) {
+    return $movie['releaseYear'] >= 2003;
+});
+
 ?>
 
-<?php foreach (filter($movies, 2000) as $movie) : ?>
+<?php foreach ($filteredMovies as $movie) : ?>
     <li> <?= $movie['name'] ?>  </li>
 <?php endforeach; ?>
 
