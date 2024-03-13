@@ -9,38 +9,48 @@
     <title><?= $title ?></title>
 </head>
 <body>
-        <?php
-        $books = [
-            [
-                "name" => "First Book",
-                "author" => "Mohamed",
-                "purchaseUrl" => "https://example.com",
-                "releaseYear" => 2002
-            ],
-            [
-                "name" => "Second Book",
-                "author" => "Ahmed",
-                "purchaseUrl" => "https://example.com",
-                "releaseYear" => 2000
-            ],
-            [
-                "name" => "Third Book",
-                "author" => "Ali",
-                "purchaseUrl" => "https://example.com",
-                "releaseYear" => 2004
-            ]
-        ];
+
+<h1>Recommended Book</h1>
+<?php
+$books = [
+    [
+        "name" => "First Book",
+        "author" => "Mohamed",
+        "purchaseUrl" => "https://example.com",
+        "releaseYear" => 2002
+    ],
+    [
+        "name" => "Second Book",
+        "author" => "Ahmed",
+        "purchaseUrl" => "https://example.com",
+        "releaseYear" => 2000
+    ],
+    [
+        "name" => "Third Book",
+        "author" => "Ali",
+        "purchaseUrl" => "https://example.com",
+        "releaseYear" => 2004
+    ]
+];
+
+function filterByAuthor($books, $author)
+{
+    $filteredBooks = [];
+    foreach ($books as $book) {
+        if (strtolower($book['author']) === strtolower($author)) {
+            $filteredBooks[] = $book;
+        }
+    }
+    return $filteredBooks;
+}
 
 
-        ?>
 
-        <?php foreach ($books as $book) : ?>
-            <li>
-                <a href="<?= $book["purchaseUrl"] ?>">
-                    <?= $book["name"] . " - " . $book["releaseYear"]; ?>
-                </a>
-            </li>
-        <?php endforeach; ?>
+?>
+
+<?php foreach (filterByAuthor($books, 'Ahmed') as $book) : ?>
+    <li>  <?= $book["name"] . " - " . $book["releaseYear"]; ?> </li>
+<?php endforeach; ?>
 
 </body>
 </html>
