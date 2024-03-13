@@ -10,7 +10,10 @@
 <body>
     <p>
         <?php
-            echo  "Create a paragraph that uses PHP to echo any basic sentence of your choosing. Practice typing the opening and closing <?php tags.";
+            $greeting ="Hello";
+            echo  '$greeting Everybody! <br>';
+            echo  "Notice the different <br>";
+            echo  "$greeting Everybody!";
         ?>
     </p>
 </body>
