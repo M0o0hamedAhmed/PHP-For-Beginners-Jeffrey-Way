@@ -44,10 +44,9 @@ function filter($movies, $fn)
     return $filteredMovies;
 }
 
-//$filteredMovies = filter($movies, function ($movie) {
-//    return $movie['releaseYear'] >= 2003;
-//});
-
+$filteredMovies = filter($movies, function ($movie) {
+    return $movie['releaseYear'] >= 2003;
+});
 $filteredMovies = array_filter($movies, function ($movie) {
     return $movie['releaseYear'] >= 2003;
 });
