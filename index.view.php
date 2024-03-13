@@ -9,12 +9,14 @@
     <title><?= $title ?></title>
 </head>
 <body>
+<h1><?= $business['name'] ?></h1>
 
-<h1>My favorites movies</h1>
+<?php foreach ($business['categories'] as $category) : ?>
+<ul>
 
+ <li> <?=  $category ?> </li>
+</ul>
 
-<?php foreach ($filteredMovies as $movie) : ?>
-    <li> <?= $movie['name'] ?>  </li>
 <?php endforeach; ?>
 
 </body>
