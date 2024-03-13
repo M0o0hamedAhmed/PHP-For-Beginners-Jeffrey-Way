@@ -10,10 +10,8 @@
 <body>
     <p>
         <?php
-            $greeting ="Hello";
-            echo  '$greeting Everybody! <br>';
-            echo  "Notice the different <br>";
-            echo  "$greeting Everybody!";
+            $name ="Mohamed";
+            echo  "Hello  $name!";
         ?>
     </p>
 </body>
