@@ -8,11 +8,20 @@
     <title>Your First PHP Tag Assignment</title>
 </head>
 <body>
-
+<h1>Recommended Book</h1>
         <?php
-        $greeting = "Hello World";
+                $books = [
+                    "First Book",
+                    "Second Book",
+                    "Third Book",
+                ];
         ?>
 
-        <h1><?= $greeting ?></h1>
+
+    <ul>
+        <?php foreach ($books as $book) : ?>
+            <li> <?= $book ?>  </li>
+        <?php endforeach; ?>
+    </ul>
 </body>
 </html>
