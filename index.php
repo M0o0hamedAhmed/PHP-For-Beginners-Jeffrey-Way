@@ -9,21 +9,38 @@
     <title><?= $title ?></title>
 </head>
 <body>
-<h1> <?= $title ?> </h1>
         <?php
-                $names = [
-                    "Mohamed",
-                    "Ahmed",
-                    "Ali",
-                    "Omar",
-                ];
+        $books = [
+            [
+                "name" => "First Book",
+                "author" => "Mohamed",
+                "purchaseUrl" => "https://example.com",
+                "releaseYear" => 2002
+            ],
+            [
+                "name" => "Second Book",
+                "author" => "Ahmed",
+                "purchaseUrl" => "https://example.com",
+                "releaseYear" => 2000
+            ],
+            [
+                "name" => "Third Book",
+                "author" => "Ali",
+                "purchaseUrl" => "https://example.com",
+                "releaseYear" => 2004
+            ]
+        ];
+
+
         ?>
 
-
-    <ul>
-        <?php foreach ($names as $name) : ?>
-            <li> <?= $name ?>  </li>
+        <?php foreach ($books as $book) : ?>
+            <li>
+                <a href="<?= $book["purchaseUrl"] ?>">
+                    <?= $book["name"] . " - " . $book["releaseYear"]; ?>
+                </a>
+            </li>
         <?php endforeach; ?>
-    </ul>
+
 </body>
 </html>
