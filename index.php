@@ -8,16 +8,11 @@
     <title>Your First PHP Tag Assignment</title>
 </head>
 <body>
+
         <?php
-            $name ="Dark Matter";
-            $read = true;
-           if($read){
-               $message =  "You have read $name";
-           }else{
-               $message =  "You have  Not read $name";
-           }
+        $greeting = "Hello World";
         ?>
 
-      <h1><?= $message ?></h1>
+        <h1><?= $greeting ?></h1>
 </body>
 </html>
