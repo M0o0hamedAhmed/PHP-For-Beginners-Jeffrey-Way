@@ -1,10 +1,6 @@
 <?php
-
-$title = "Home";
-
-
-require "function.php";
-require "views/index.view.php"
+$title = "Title";
+require 'function.php';
+require 'router.php';
 
 ?>
-
