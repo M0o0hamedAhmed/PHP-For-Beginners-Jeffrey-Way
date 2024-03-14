@@ -1,8 +1,9 @@
-
 <?php
 
-$title ="Home";
+$title = "Home";
 
+
+require "function.php";
 require "views/index.view.php"
 
 ?>

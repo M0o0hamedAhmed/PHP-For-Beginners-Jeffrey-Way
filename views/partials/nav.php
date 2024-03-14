@@ -8,10 +8,10 @@
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                        <a href="/" class="<?= $_SERVER['REQUEST_URI'] == '/' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'  ?>  rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
-                        <a href="about.php" class="<?= $_SERVER['REQUEST_URI'] == '/about.php' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'  ?>   rounded-md px-3 py-2 text-sm font-medium">About</a>
-                        <a href="contact.php" class="<?= $_SERVER['REQUEST_URI'] == '/contact.php' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'  ?>  text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact</a>
-                        <a href="our_mission.php" class="<?= $_SERVER['REQUEST_URI'] == '/our_missions' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'  ?>  text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Our Mission</a>
+                        <a href="/" class="<?= urlIs('/') ? 'bg-gray-900 text-white' : 'text-gray-300'  ?> hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
+                        <a href="/about.php" class="<?=  urlIs('/about.php') ? 'bg-gray-900 text-white' : 'text-gray-300 '  ?> hover:bg-gray-700 hover:text-white  rounded-md px-3 py-2 text-sm font-medium">About</a>
+                        <a href="/contact.php" class="<?= urlIs('/contact.php')  ? 'bg-gray-900 text-white' : 'text-gray-300 '  ?> hover:bg-gray-700 hover:text-white  text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact</a>
+                        <a href="/our_mission.php" class="<?= urlIs('/our_missions')  ? 'bg-gray-900 text-white' : 'text-gray-300 '  ?> hover:bg-gray-700 hover:text-white text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Our Mission</a>
                     </div>
                 </div>
             </div>
